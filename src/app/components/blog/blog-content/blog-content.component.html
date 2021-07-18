@@ -1,0 +1,19 @@
+<a [routerLink]="['/blog-details',{uuid:blog.uuid}]">
+    <div class="blog-item">
+        <div class="posted">
+            <div class="BY">PostedOn : {{blog.postedAt | dateTimePipe}}</div>
+            <div class="AT">PostedBy : {{blog.postedBy}}</div>
+        </div>
+    
+        <h2>{{blog.heading}}</h2>
+    
+        <div class="likes-dislikes">
+    <span class="likes-count"><i class="fas fa-thumbs-up"></i> {{blog.likesCount}} <i class="fas fa-thumbs-down"></i> {{blog.dislikesCount}}</span>
+    
+    <span class="category">Category :  {{blog.category}}</span>
+        </div>
+    
+    </div>
+    </a>
+
+    <router-outlet></router-outlet>

@@ -1,0 +1,31 @@
+
+<div class="wrapper">
+    <div class="commentedAt">
+    @{{comment.commentedBy}} <span class="on">on</span>  {{comment.commentedAt | dateTimePipe}}
+    
+    </div>
+    <div class="content">{{comment.content}}</div>
+    <div>
+        <a routerLink="#" (click)="likeDislike('like')"><span class="like"><i class="fas fa-arrow-up"></i>  {{comment.likesCount}}</span></a> 
+       <a routerLink="#"  (click)="likeDislike('dislike')"><span class="dislike"><i class="fas fa-arrow-down"></i> {{comment.dislikesCount}}</span></a>
+       <a routerLink="#"><span class="reply" (click) = "replyBox()">reply</span></a>
+    </div>
+
+    <div class="replyBox" [style.display]="isReplyBoxShown">
+        <form (ngSubmit)="submitReply()">
+      <input type="text" class="replyContent" [(ngModel)]="replyContent" name="replyContent" >
+      <input type="submit" (click)="replyBox()" name="replyBotton"id="replyBotton" value="Reply">
+  </form>
+    </div>
+    <div class="commentWrapper">
+      <div *ngFor="let comment of comment.replies" class="comment">
+          <app-comment [comment] = "comment" [paddingLeft]="paddingLeft+10"></app-comment>
+      </div>
+  </div>
+
+  
+
+
+  
+
+</div>

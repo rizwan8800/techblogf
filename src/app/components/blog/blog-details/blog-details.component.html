@@ -1,0 +1,51 @@
+<div class="wrapper">
+
+    <div class="category">
+        category : {{blog.category}}
+    </div>
+
+    <h1>{{blog.heading}}</h1>
+
+    <div class="images">
+        <div *ngFor="let link of blog.imageLinks" class="image">
+            <img src="{{link}}" alt="">
+        </div>
+    </div>
+
+    <div class="content">
+        {{blog.content}}
+    </div>
+
+
+
+    <div class="like-dislike">
+        <p class="likes">liked by : {{blog.likesCount}} <a routerLink="#" (click)="likeDislike('like')"><i class="fa fa-heart-o" aria-hidden="true"></i></a> </p>
+        <p class="dislikes">disliked by : {{blog.dislikesCount}} <a routerLink="#" (click)="likeDislike('dislike')"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a> </p>
+    </div>
+
+    <div class="posted">
+        posted by <span class="name">{{blog.postedBy}}</span>  on <span class="time">{{blog.postedAt | dateTimePipe}}</span> 
+    </div>
+
+  
+    <hr>
+    <div class="comments">
+        <h4>Comments </h4><span class="add-comm" (click)="showBox()" >Add Comment</span>
+        
+      </div>
+      <hr>
+
+    <div class="commentWrapper">
+        <div *ngFor="let comment of blog.comments" class="comment">
+            <app-comment [comment] = "comment" [paddingLeft]=0></app-comment>
+        </div>
+    </div>
+    <div class="add-comment" [style.display]="showCommentBox" >
+        <a routerLink="#" (click)="showBox()" ><i class="fas fa-times"></i></a>
+        <form (ngSubmit)="commentSubmit()">
+          <textarea required="required" [(ngModel)]="commentContent" class="content-box" name="commentContent" id="content" placeholder="text......"></textarea>
+          <input class="submit-buttom" type="submit" (click)="showBox()"  value="Comment">
+        </form>
+    </div>
+
+</div>

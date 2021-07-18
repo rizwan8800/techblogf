@@ -1,0 +1,84 @@
+
+  .wrapper{
+    width: 95%;
+    margin-left: auto;
+    border-left: 1px solid rgb(197, 194, 194);
+  }
+  .commentedAt{
+    color: grey;
+    padding: 10px;
+  }
+  .on{
+    color: black;
+    padding: 0px 10px;
+  }
+
+.content{
+  padding: 0px 10px 0px 25px;
+  color: rgb(77, 77, 77);
+}
+
+.like,.dislike,.reply{
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  padding: 10px ;
+  margin-left: 10px;
+  color: silver;
+  transition: 0.5s all;
+
+}
+
+.like:hover,.dislike:hover, .reply:hover{
+  position: relative;
+  top: -3px;
+}
+
+.like{
+  color: green;
+
+}
+.dislike{
+  color: red;
+}
+.reply{
+  color: grey;
+}
+
+.replyBox{
+  transition: 0.5s all;
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.replyContent{
+  width: 70%;
+  outline: none !important;
+  padding: 0px 10px ;
+  border: none;
+  margin: 10px;
+  border-bottom: 1px solid black;
+  transition: 0.4s all;
+}
+.replyContent:focus{
+  border-bottom: 1px solid red;
+  position: relative;
+  top: -3px;
+}
+
+#replyBotton{
+  outline: none;
+  border-radius: none;
+  border: none;
+  padding: 0px 20px;
+  border: 1px solid purple;
+  color: purple;
+  transition: 0.4s all;
+}
+
+#replyBotton:hover{
+ 
+  position: relative;
+  top: -3px;
+}

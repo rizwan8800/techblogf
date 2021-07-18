@@ -1,0 +1,43 @@
+.create-blog{
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 600;
+}
+
+.mynavbar{
+    box-shadow: 2px 0px  3px black  ;
+}
+
+.sidebar{
+    height: 100%;
+    width: 22vw;
+    float: left;
+}
+
+/* sidebar */
+.category-heading{
+    margin: 10px;
+    font-size: 20px;
+}
+
+.categories-list{
+    list-style: none;
+}
+
+.categories-list>li>a{
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 136, 0);
+    border-bottom: 2px solid rgb(153, 101, 5);
+    padding: 1px;
+    margin: 10px;
+    text-transform: uppercase;
+}
+
+/* sidebar end */
+app-blog-form{
+    width: 75vw;
+    float: right;
+    padding: 50px;
+}

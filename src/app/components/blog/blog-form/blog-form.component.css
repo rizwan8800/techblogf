@@ -1,0 +1,13 @@
+.main{
+    width: 75vw;
+    float: right;
+    padding: 50px;
+}
+
+.contentbox{
+    width: 100%;
+}
+
+.alert-success{
+    transition: 0.5s all;
+}

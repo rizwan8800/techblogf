@@ -1,0 +1,37 @@
+
+.blog-item{
+    width: 98%;
+    display: flex;
+    margin: 50px 0px 0px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 2px solid silver;
+    color: rgb(30, 53, 43);
+}
+.blog-item>.posted, .blog-item>.likes-dislikes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+h2{
+    color: blue;
+    margin-left: 10px;
+    transition: 0.3s all;
+    text-shadow: 0px 0px 2px blue;
+}
+h2:hover{
+    color: grey;
+}
+.fa-thumbs-up{
+    color: green;
+}
+.fa-thumbs-down{
+    color: red;
+}
+
+a{
+    text-decoration: none;
+}

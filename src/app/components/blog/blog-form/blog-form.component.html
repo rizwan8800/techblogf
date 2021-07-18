@@ -1,0 +1,29 @@
+
+<form #blogDto=ngForm class="main" (ngSubmit)="onSubmit()" >
+  
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <input type="text" [(ngModel)]="category" name="category" class="form-control" id="category" placeholder="category">
+  </div>
+  <div class="mb-3">
+    <label for="heading" class="form-label">Heading</label>
+    <input type="text" name="heading" [(ngModel)]="heading" class="form-control" id="heading" placeholder="heading">
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Content</label><br>
+    <textarea name="content" id="content" [(ngModel)]="content" class="contentbox" placeholder="write content here..." cols="30" rows="10" name="content"></textarea>
+  </div>
+  <div class="mb-3">
+  <input type="hidden" name="postedBy" [(ngModel)]="postedBy">
+</div>
+<div class="mb-3">
+  <label for="files" class="form-label">Choose images (only .jpg accepted)</label><br>
+  <input type="file" (change)="save($event)" name="files" id="files" multiple="multiple"><br><br>
+</div>
+  <button type="submit" name="isSubmitted" [disabled]="isSubmitted" class="btn btn-primary">CreateBlog</button>
+  <br><br>
+  <div class="alert alert-success" [style.display]="blogAddSuccess" role="alert">
+    <i class="fas fa-check-circle me-3"  ></i> Blog created successfully
+  </div>
+</form>
+
