@@ -3,7 +3,7 @@
   
   <div class="mb-3">
     <label for="category" class="form-label">Category</label>
-    <input type="text" required="required" [(ngModel)]="category" name="category" class="form-control" id="category" placeholder="category">
+    <input type="text" required="required"  [(ngModel)]="category" name="category" class="form-control" id="category" placeholder="category">
   </div>
   <div class="mb-3">
     <label for="heading" class="form-label">Heading</label>
@@ -24,6 +24,9 @@
   <br><br>
   <div class="alert alert-success" [style.display]="blogAddSuccess" role="alert">
     <i class="fas fa-check-circle me-3"  ></i> Blog created successfully
+  </div>
+  <div class="alert alert-danger" [style.display]="blogAddFailed" role="alert">
+    <i class="fas fa-times-circle me-3"  ></i> unable to create blog with blank fields 
   </div>
 </form>
 

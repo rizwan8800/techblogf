@@ -10,6 +10,7 @@ import { AppConstants } from 'src/app/constants/AppConstants';
 export class BlogFormComponent implements OnInit {
 
   blogAddSuccess:any = "none"
+  blogAddFailed:any = "none"
   isSubmitted:string = "";
   category!: string;
   heading!: string;
@@ -25,6 +26,13 @@ export class BlogFormComponent implements OnInit {
 
 
   onSubmit() {
+
+    if(this.content == null || this.content == "" ||  this.category == null || this.category == "" ||  this.heading == null || this.heading == ""){
+      console.log("unable to create blog with blank fields ");
+      this.blogPostFailed();
+
+    }else{
+
     this.isSubmitted = "disabled"
     let payload = new FormData();
     payload.append('postedBy', this.postedBy+"");
@@ -37,7 +45,6 @@ for(var i=0 ; i<this.files.length; i++){
   payload.append('files[]', this.files[i]);
 }}
 
-
     this.http
       .post(`${AppConstants.BASE_URI}blog/v1/blog`,
         payload
@@ -49,15 +56,25 @@ for(var i=0 ; i<this.files.length; i++){
       this.heading = "";
       this.content = "";
       this.files = [];
+    }
   }
 
 
   blogPostSuccess(){
     if(this.blogAddSuccess == 'none'){
       this.blogAddSuccess = 'block'
-      setTimeout(()=>{this.blogAddSuccess = 'none'},2000);
+      setTimeout(()=>{this.blogAddSuccess = 'none'},4000);
     }else{
       this.blogAddSuccess = 'none'
+    }
+  }
+
+  blogPostFailed(){
+    if(this.blogAddFailed == 'none'){
+      this.blogAddFailed = 'block'
+      setTimeout(()=>{this.blogAddFailed = 'none'},4000);
+    }else{
+      this.blogAddFailed = 'none'
     }
   }
 

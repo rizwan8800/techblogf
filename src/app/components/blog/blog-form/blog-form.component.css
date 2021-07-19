@@ -8,6 +8,6 @@
     width: 100%;
 }
 
-.alert-success{
-    transition: 0.5s all;
+.alert-success, .alert-danger{
+    transition: 0.5s all !important;
 }
