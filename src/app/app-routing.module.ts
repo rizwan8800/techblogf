@@ -14,11 +14,14 @@ const routes: Routes = [
   },
   {
     path:'',
-    component:BlogItemComponent
+    component:BlogItemComponent,
+    runGuardsAndResolvers:"always"
+    
   },
   {
     path:'blog-details',
     component:BlogDetailsComponent,
+    runGuardsAndResolvers:"always"
   },
   {
     path:'category',
@@ -36,7 +39,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation : 'reload'})],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation : 'reload', useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import {AppConstants} from './constants/AppConstants'
 
 
@@ -33,12 +34,12 @@ export class AppComponent {
   }
 
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, private router:Router){
     
   }
 
-  search(){
-    
+  ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   changeCategory(value:any){

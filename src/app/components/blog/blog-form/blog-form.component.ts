@@ -44,6 +44,10 @@ for(var i=0 ; i<this.files.length; i++){
       });
       this.isSubmitted = ""
       this.blogPostSuccess();
+      this.category = "";
+      this.heading = "";
+      this.content = "";
+      this.files = [];
   }
 
 

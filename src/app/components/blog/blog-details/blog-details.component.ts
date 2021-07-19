@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppConstants } from 'src/app/constants/AppConstants';
 
 @Component({
@@ -19,9 +19,10 @@ export class BlogDetailsComponent implements OnInit {
   commentContent:any
   commentedBy:any = localStorage.getItem("name");
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router:Router) { }
 
   ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
   getBlogByUUid(){
     let resdata;
