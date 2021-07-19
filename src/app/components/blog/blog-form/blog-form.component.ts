@@ -31,10 +31,11 @@ export class BlogFormComponent implements OnInit {
     payload.append('content', this.content);
     payload.append('category', this.category);
     payload.append('heading', this.heading);
+    if(this.files.length > 0){
 for(var i=0 ; i<this.files.length; i++){
   console.log(this.files[i]);
   payload.append('files[]', this.files[i]);
-}
+}}
 
 
     this.http
