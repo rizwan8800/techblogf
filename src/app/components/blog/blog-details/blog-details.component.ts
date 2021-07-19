@@ -75,7 +75,7 @@ export class BlogDetailsComponent implements OnInit {
     payload.append("commentedBy",this.commentedBy);
     payload.append("content",this.commentContent);
     this.http.post(`${AppConstants.BASE_URI}comment/v1/comment/${this.uuid}`,payload).subscribe(
-      data => console.log(data)
+      data => this.blog.comments.push(data)
     )
   }
 

@@ -61,9 +61,12 @@ export class CommentComponent implements OnInit {
 name:any = localStorage.getItem("name")
 
   submitReply(){
+    
     let data = new FormData();
     data.append("content",this.replyContent);
     data.append("commentedBy",this.name);
-    this.http.post(`${AppConstants.BASE_URI}comment/v1/reply/${this.comment.commentUuid}`,data).subscribe(data => {}); 
+    this.http.post(`${AppConstants.BASE_URI}comment/v1/reply/${this.comment.commentUuid}`,data).subscribe(data => { console.log(data);this.comment.replies.push(data)}); 
+    
+    
   }
 }
